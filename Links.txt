@@ -1,0 +1,19 @@
+
+.NET Core
+
+	https://www.microsoft.com/net/core#windows
+
+	ASP.NET Core Documentation
+	https://docs.asp.net/en/latest/
+
+	Problems installing Dot Net Core 1.0.0 VS 2015 Tools Preview 2
+	http://stackoverflow.com/questions/38134048/problems-installing-dot-net-core-1-0-0-vs-2015-tools-preview-2
+
+	Exploring .NET Core and ASP.NET Core
+	https://weblog.west-wind.com/posts/2016/Jun/29/First-Steps-Exploring-NET-Core-and-ASPNET-Core
+	https://weblog.west-wind.com/posts/2016/Jun/13/ASPNET-Core-and-NET-Core-Overview
+
+
+Process.Start
+https://msdn.microsoft.com/en-us/library/system.diagnostics.process.standardoutput(v=vs.110).aspx
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/b8a97377-ee18-4e2b-8c13-9bf5e60eb609/issue-with-processstart?forum=netfxbcl
