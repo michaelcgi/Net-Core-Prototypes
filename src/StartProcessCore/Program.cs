@@ -17,14 +17,20 @@ namespace StartProcessCore
                 return;
             }
 
+            string output = StartProcess(args);
+
+            Console.Out.WriteLine("OUTPUT:");
+            Console.Out.WriteLine(output);
+        }
+
+        private static string StartProcess(string[] args)
+        {
             var psi = CreateProcessStartInfo(args);
             var p = Process.Start(psi);
 
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
-
-            Console.Out.WriteLine("OUTPUT:");
-            Console.Out.WriteLine(output);
+            return output;
         }
 
         private static ProcessStartInfo CreateProcessStartInfo(string[] args)

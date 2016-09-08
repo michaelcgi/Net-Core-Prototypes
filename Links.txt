@@ -17,6 +17,16 @@
 	https://msdn.microsoft.com/en-us/library/system.diagnostics.process.standardoutput(v=vs.110).aspx
 	https://social.msdn.microsoft.com/Forums/vstudio/en-US/b8a97377-ee18-4e2b-8c13-9bf5e60eb609/issue-with-processstart?forum=netfxbcl
 
+	BUILDING A RESTFUL API WITH ASP.NET Core
+	http://blog.scottlogic.com/2016/01/20/restful-api-with-aspnet50.html
+
+REST
+	Postman helps you develop APIs faster.
+	https://www.getpostman.com/
+
+	Represent actions(verbs) in REST URI
+	http://programmers.stackexchange.com/questions/181545/represent-actionsverbs-in-rest-uri
+
 
 .Net Core + Linux
 
@@ -26,5 +36,21 @@ Azure
 
 	Dashboard
 	https://portal.azure.com/#dashboard/private/6182e538-0e67-4416-aa26-99668b8db021
+
+Docker
+
+	Publishing an ASP.NET 5 app to Docker on Linux with Visual Studio
+	http://www.hanselman.com/blog/PublishingAnASPNET5AppToDockerOnLinuxWithVisualStudio.aspx
+
+	Docker Client for Windows
+	https://azure.microsoft.com/en-us/blog/docker-client-for-windows-is-now-available/
+
+.Net Async
+
+	Is there any async equivalent of Process.Start?
+	http://stackoverflow.com/questions/10788982/is-there-any-async-equivalent-of-process-start
+	
+	How to asynchronously read the standard output stream and standard error stream at once
+	http://stackoverflow.com/questions/12566166/how-to-asynchronously-read-the-standard-output-stream-and-standard-error-stream
 
 	
