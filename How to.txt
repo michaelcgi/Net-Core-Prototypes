@@ -1,0 +1,16 @@
+
+* 
+* Execute ExecutionServiceCore on Linux
+*
+
+- Development
+GitHub commit and sync
+
+- Linux
+git clone https://github.com/michaelcgi/Net-Core-Prototypes.git
+
+cd ~/Net-Core-Prototypes/src
+dotnet restore ExecutionServiceCore
+dotnet restore ProgramWrapperCore
+cd ExecutionServiceCore
+dotnet run
