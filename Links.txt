@@ -43,9 +43,6 @@ REST
 	Publish APS.NET Core to a Linux Production Environment
 	https://docs.asp.net/en/latest/publishing/linuxproduction.html
 
-	Deploy ASP.NET 5 Apps to Docker on Linux
-	https://blog.tonysneed.com/2015/05/25/develop-and-deploy-asp-net-5-apps-to-docker-on-linux/
-
 	http://www.cyberciti.biz/faq/command-to-show-linux-version/	
 
 Azure
@@ -55,11 +52,17 @@ Azure
 
 Docker
 
+	Deploy ASP.NET 5 Apps to Docker on Linux
+	https://blog.tonysneed.com/2015/05/25/develop-and-deploy-asp-net-5-apps-to-docker-on-linux/
+
 	Publishing an ASP.NET 5 app to Docker on Linux with Visual Studio
 	http://www.hanselman.com/blog/PublishingAnASPNET5AppToDockerOnLinuxWithVisualStudio.aspx
 
 	Docker Client for Windows
 	https://azure.microsoft.com/en-us/blog/docker-client-for-windows-is-now-available/
+
+	Deploy an ASP.NET container to a remote Docker host
+	https://azure.microsoft.com/en-us/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker/
 
 .Net Async
 
