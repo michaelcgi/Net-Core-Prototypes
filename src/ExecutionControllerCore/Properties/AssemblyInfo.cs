@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DLM")]
-[assembly: AssemblyProduct("ProgramWrapperCore")]
+[assembly: AssemblyProduct("ExecutionControllerCore")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e19aaa25-32c8-4250-9d66-a644b99665e8")]
+[assembly: Guid("5a9547f3-1388-402b-9eba-58ac643df1d3")]

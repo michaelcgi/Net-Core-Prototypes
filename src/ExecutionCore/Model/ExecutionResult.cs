@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HelloDatabaseCore.Model
+namespace ExecutionCore.Model
 {
     public class ExecutionResult
     {
@@ -12,7 +12,7 @@ namespace HelloDatabaseCore.Model
         public TimeSpan? RunDuration { get; set; }
         public string StandardOutput { get; set; }
         public string ErrorOutput { get; set; }
-        public Exception Exception { get; set; }
+        public string ExceptionXml { get; set; }
         public string OsDescription { get; set; }
     }
 }

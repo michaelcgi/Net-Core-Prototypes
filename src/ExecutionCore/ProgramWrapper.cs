@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using Newtonsoft.Json;
 using System.Runtime.InteropServices;
+using ExecutionCore.Model;
 
-namespace ProgramWrapperCore
+namespace ExecutionCore
 {
     public class ProgramWrapper
     {
@@ -18,7 +15,7 @@ namespace ProgramWrapperCore
 
         public async Task<ExecutionResult> Execute(ExecutionRequest request)
         {
-            string output = null;
+            string standardOutput = null;
             DateTime? runTime = null;
             TimeSpan? runDuration = null;
             Exception exception = null;
@@ -26,7 +23,7 @@ namespace ProgramWrapperCore
             try
             {
                 runTime = DateTime.Now;
-                output = await ExecuteProcess(request.FileName, request.Arguments);
+                standardOutput = await ExecuteProcess(request.FileName, request.Arguments);
                 runDuration = DateTime.Now.Subtract(runTime.Value);
             }
             catch (Exception ex)
@@ -35,19 +32,20 @@ namespace ProgramWrapperCore
                 exception = ex;
             }
 
-            return CreateExecutionResult(output, runTime, runDuration, exception);
+            return CreateExecutionResult(standardOutput, null, runTime, runDuration, exception);
         }
 
         private ExecutionResult CreateExecutionResult(
-            string output, DateTime? runTime, TimeSpan? runDuration, Exception exception)
+            string standardOutput, string errorOutput, DateTime? runTime, TimeSpan? runDuration, Exception exception)
         {
             return new ExecutionResult()
             {
-                Output = output,
+                StandardOutput = standardOutput,
+                ErrorOutput = errorOutput,
                 RunTime = runTime,
                 RunDuration = runDuration,
-                Exception = exception,
-                OSDescription = RuntimeInformation.OSDescription
+                ExceptionXml = exception == null ? "" : ExceptionUtils.GetXmlString(exception),
+                OsDescription = RuntimeInformation.OSDescription
            };
         }
 

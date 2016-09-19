@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ProgramWrapperCore;
-using ExecutionServiceCore.Models;
+using ExecutionCore;
+using ExecutionCore.Model;
 
 namespace ExecutionServiceCore.Controllers
 {
@@ -22,7 +22,7 @@ namespace ExecutionServiceCore.Controllers
         [HttpGet]
         public IEnumerable<ExecutionJob> GetAll()
         {
-            return _repository.GetAll();
+            return _repository.GetAll().OrderByDescending(ej => ej.Id);
         }
 
         // GET api/values/5
@@ -46,14 +46,8 @@ namespace ExecutionServiceCore.Controllers
                 return BadRequest();
             }
 
+            executionJob.Status = ExecutionStatus.Queued;
             _repository.Add(executionJob);
-
-            var programWrapper = new ProgramWrapper();
-            var task = programWrapper.Execute(executionJob.Request);
-            task.Wait();
-            executionJob.Result = task.Result;
-
-            executionJob.Status = ExecutionStatus.Finished;
 
             return CreatedAtRoute("GetExecution", new { id = executionJob.Id }, executionJob);
         }

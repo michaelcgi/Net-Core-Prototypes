@@ -1,7 +1,7 @@
-﻿using ExecutionServiceCore.Models;
+﻿using ExecutionCore.Model;
 using System.Collections.Generic;
 
-namespace ExecutionServiceCore.Models
+namespace ExecutionCore.Model
 {
     public interface IExecutionRepository
     {

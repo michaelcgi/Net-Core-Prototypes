@@ -14,7 +14,8 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "ProgramWrapperCore": "1.0.0-*"
+    "ExecutionCore": "1.0.0-*",
+    "ExecutionControllerCore": "1.0.0-*"
   },
 
   "tools": {

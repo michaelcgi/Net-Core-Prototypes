@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ExecutionServiceCore.Models;
+using ExecutionCore.Model;
+using ExecutionControllerCore.Model;
 
 namespace ExecutionServiceCore
 {
@@ -31,7 +32,7 @@ namespace ExecutionServiceCore
             // Add framework services.
             services.AddMvc();
 
-            services.AddSingleton<IExecutionRepository, DictionaryExecutionRepository>();
+            services.AddSingleton<IExecutionRepository, DbExecutionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

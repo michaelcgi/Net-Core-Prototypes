@@ -17,7 +17,7 @@ dotnet run
 
 
 * 
-* Manage database
+* Manage EF database
 *
 
 dotnet ef migrations add [name]

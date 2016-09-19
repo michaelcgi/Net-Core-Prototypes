@@ -7,11 +7,10 @@ namespace HelloDatabaseCore.Model
 {
     public class ExecutionRequest
     {
-        public int ExecutionRequestId { get; set; }
+        public int Id { get; set; }
         public string FileName { get; set; }
         public string Arguments { get; set; }
         public DateTime? Time { get; set; }
-
         public ExecutionRequest()
         {
             Time = DateTime.Now;

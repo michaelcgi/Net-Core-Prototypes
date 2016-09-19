@@ -1,10 +1,8 @@
-﻿using System;
+﻿using ExecutionCore.Model;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ExecutionServiceCore.Models
+namespace ExecutionCore.Model
 {
     public class DictionaryExecutionRepository : IExecutionRepository
     {
