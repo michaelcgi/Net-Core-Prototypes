@@ -22,6 +22,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProgramWrapperCore", "src\P
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ExecutionServiceCore", "src\ExecutionServiceCore\ExecutionServiceCore.xproj", "{848F8CA1-8329-46CB-85E1-5E96055E9D09}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloDatabaseCore", "src\HelloDatabaseCore\HelloDatabaseCore.xproj", "{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{848F8CA1-8329-46CB-85E1-5E96055E9D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{848F8CA1-8329-46CB-85E1-5E96055E9D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{848F8CA1-8329-46CB-85E1-5E96055E9D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +59,6 @@ Global
 		{FCABBDAD-0FD4-4EC8-A26D-FE2C01C249D2} = {5C4F37CF-AA35-47EE-A200-62337405D7C5}
 		{E19AAA25-32C8-4250-9D66-A644B99665E8} = {5C4F37CF-AA35-47EE-A200-62337405D7C5}
 		{848F8CA1-8329-46CB-85E1-5E96055E9D09} = {5C4F37CF-AA35-47EE-A200-62337405D7C5}
+		{F2927A3C-8BE6-4DAD-94D9-60DFF2E5FE94} = {5C4F37CF-AA35-47EE-A200-62337405D7C5}
 	EndGlobalSection
 EndGlobal

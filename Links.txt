@@ -43,7 +43,16 @@ REST
 	Publish APS.NET Core to a Linux Production Environment
 	https://docs.asp.net/en/latest/publishing/linuxproduction.html
 
-	http://www.cyberciti.biz/faq/command-to-show-linux-version/	
+	http://www.cyberciti.biz/faq/command-to-show-linux-version/
+	
+.Net Core + SQL Server
+
+	.NET Core Application to New SQLite Database 
+	(diff to SQL server is just connection string)
+	https://docs.efproject.net/en/latest/platforms/netcore/new-db-sqlite.html	
+	
+	SQL Server 2012 connection strings
+	https://www.connectionstrings.com/sql-server-2012/	
 
 Azure
 

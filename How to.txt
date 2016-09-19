@@ -14,3 +14,11 @@ dotnet restore ExecutionServiceCore
 dotnet restore ProgramWrapperCore
 cd ExecutionServiceCore
 dotnet run
+
+
+* 
+* Manage database
+*
+
+dotnet ef migrations add [name]
+dotnet ef database update
