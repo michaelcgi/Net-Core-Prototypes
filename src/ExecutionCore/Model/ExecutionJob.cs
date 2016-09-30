@@ -43,9 +43,27 @@ namespace ExecutionCore.Model
             }
         }
 
-        public virtual ICollection<ExecutionRequest> Requests { get; set; }
+        public ICollection<ExecutionRequest> Requests { get; set; }
 
-        public virtual ICollection<ExecutionResult> Results { get; set; }
+        public IEnumerable<ExecutionRequest> RequestLeafs
+        {
+            get
+            {
+                foreach (var request in Requests)
+                {
+                    var executionCount = request.ExecutionCount ?? 1;
+                    for (int i = 0; i < executionCount; i++)
+                    {
+                        yield return new ExecutionRequest()
+                        {
+                            FileName = request.FileName, Arguments = request.Arguments
+                        };
+                    }
+                }
+            }
+        }
+
+        public ICollection<ExecutionResult> Results { get; set; }
 
         private bool IsInSingleRequestMode()
         {

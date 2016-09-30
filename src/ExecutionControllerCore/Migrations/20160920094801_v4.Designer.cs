@@ -8,9 +8,10 @@ using ExecutionControllerCore.Model;
 namespace ExecutionControllerCore.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20160920094801_v4")]
+    partial class v4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -35,15 +36,13 @@ namespace ExecutionControllerCore.Migrations
 
                     b.Property<string>("Arguments");
 
-                    b.Property<int?>("ExecutionCount");
-
-                    b.Property<int?>("ExecutionJobId1");
+                    b.Property<int?>("ExecutionJobId");
 
                     b.Property<string>("FileName");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ExecutionJobId1");
+                    b.HasIndex("ExecutionJobId");
 
                     b.ToTable("ExecutionRequest");
                 });
@@ -59,11 +58,7 @@ namespace ExecutionControllerCore.Migrations
 
                     b.Property<int?>("ExecutionJobId");
 
-                    b.Property<string>("IPAdress");
-
                     b.Property<string>("OsDescription");
-
-                    b.Property<int?>("RequestId");
 
                     b.Property<TimeSpan?>("RunDuration");
 
@@ -77,8 +72,6 @@ namespace ExecutionControllerCore.Migrations
 
                     b.HasIndex("ExecutionJobId");
 
-                    b.HasIndex("RequestId");
-
                     b.ToTable("ExecutionResult");
                 });
 
@@ -86,7 +79,7 @@ namespace ExecutionControllerCore.Migrations
                 {
                     b.HasOne("ExecutionCore.Model.ExecutionJob")
                         .WithMany("Requests")
-                        .HasForeignKey("ExecutionJobId1");
+                        .HasForeignKey("ExecutionJobId");
                 });
 
             modelBuilder.Entity("ExecutionCore.Model.ExecutionResult", b =>
@@ -94,10 +87,6 @@ namespace ExecutionControllerCore.Migrations
                     b.HasOne("ExecutionCore.Model.ExecutionJob")
                         .WithMany("Results")
                         .HasForeignKey("ExecutionJobId");
-
-                    b.HasOne("ExecutionCore.Model.ExecutionRequest", "Request")
-                        .WithMany()
-                        .HasForeignKey("RequestId");
                 });
         }
     }

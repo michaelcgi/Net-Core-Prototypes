@@ -18,7 +18,12 @@ namespace ExecutionControllerCore.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ExecutionJob>().Ignore(ej => ej.Request);
+            modelBuilder.Entity<ExecutionJob>()
+                .Ignore(ej => ej.Request)
+                .Ignore(ej => ej.RequestLeafs);
+
+            modelBuilder.Entity<ExecutionRequest>()
+                .Ignore(er => er.Index);
         }
     }
 }

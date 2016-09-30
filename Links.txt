@@ -52,7 +52,10 @@ REST
 	https://docs.efproject.net/en/latest/platforms/netcore/new-db-sqlite.html	
 	
 	SQL Server 2012 connection strings
-	https://www.connectionstrings.com/sql-server-2012/	
+	https://www.connectionstrings.com/sql-server-2012/
+	
+	Ignoring a class property in Entity Framework 4.1 Code First
+	http://stackoverflow.com/questions/10385248/ignoring-a-class-property-in-entity-framework-4-1-code-first	
 
 Azure
 

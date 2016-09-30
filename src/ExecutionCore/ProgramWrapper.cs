@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using ExecutionCore.Model;
+using System.Threading;
 
 namespace ExecutionCore
 {
@@ -13,7 +14,7 @@ namespace ExecutionCore
         {
         }
 
-        public async Task<ExecutionResult> Execute(ExecutionRequest request)
+        public async Task<ExecutionResult> ExecuteAsync(ExecutionRequest request)
         {
             string standardOutput = null;
             DateTime? runTime = null;
@@ -32,20 +33,23 @@ namespace ExecutionCore
                 exception = ex;
             }
 
-            return CreateExecutionResult(standardOutput, null, runTime, runDuration, exception);
+            return CreateExecutionResult(request, standardOutput, null, runTime, runDuration, exception);
         }
 
         private ExecutionResult CreateExecutionResult(
-            string standardOutput, string errorOutput, DateTime? runTime, TimeSpan? runDuration, Exception exception)
+            ExecutionRequest request, string standardOutput, string errorOutput, DateTime? runTime, TimeSpan? runDuration, Exception exception)
         {
             return new ExecutionResult()
             {
+                Request = request,
                 StandardOutput = standardOutput,
                 ErrorOutput = errorOutput,
                 RunTime = runTime,
                 RunDuration = runDuration,
                 ExceptionXml = exception == null ? "" : ExceptionUtils.GetXmlString(exception),
-                OsDescription = RuntimeInformation.OSDescription
+                IPAdress = null,
+                OsDescription = RuntimeInformation.OSDescription,
+                ThreadId = Thread.CurrentThread.ManagedThreadId
            };
         }
 

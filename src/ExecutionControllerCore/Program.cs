@@ -13,6 +13,8 @@ namespace ExecutionControllerCore
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Starting ExecutionController");
+
             // Loop forever
             while (true)
             {
@@ -23,6 +25,8 @@ namespace ExecutionControllerCore
                     // Check any requests queue
                     if (queueCount > 0)
                     {
+                        Console.WriteLine("Executing Queued Jobs: {0} jobs", queueCount);
+
                         // Handle request queue
                         var queue = new ExecutionJobQueue();
                         queue.ExecuteQueuedJobs();

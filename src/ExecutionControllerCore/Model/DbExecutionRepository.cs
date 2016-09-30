@@ -1,33 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ExecutionCore.Model;
-using ExecutionControllerCore.Model;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace ExecutionControllerCore.Model
 {
-    public class DbExecutionRepository : IExecutionRepository
+    public class DbExecutionRepository : IExecutionRepository, IDisposable
     {
         private DatabaseContext _db;
+        private object changesLock = new object();
 
         public DbExecutionRepository()
         {
             _db = new DatabaseContext();
         }
+        public void Dispose()
+        {
+            _db.Dispose();
+        }
 
         public void Add(ExecutionJob item)
         {
-            _db.ExecutionJobs.Add(item);
-            _db.SaveChanges();
+            lock (changesLock)
+            {
+                _db.ExecutionJobs.Add(item);
+                _db.SaveChanges();
+            }
         }
 
         public ExecutionJob Find(int id)
         {
-            var query = _db.ExecutionJobs.Where(i => i.Id == id);
-
-            return query
+            return _db.ExecutionJobs.Where(i => i.Id == id)
                 .Include(ej => ej.Requests)
                 .Include(ej => ej.Results)
                 .First();
@@ -52,14 +56,20 @@ namespace ExecutionControllerCore.Model
         public ExecutionJob Remove(int id)
         {
             var i = Find(id);
-            var changeTracking = _db.ExecutionJobs.Remove(i);
-            _db.SaveChanges();
-            return changeTracking.Entity;
+            lock (changesLock)
+            {
+                var changeTracking = _db.ExecutionJobs.Remove(i);
+                _db.SaveChanges();
+                return changeTracking.Entity;
+            }
         }
 
         public void Update(ExecutionJob item)
         {
-            _db.SaveChanges();
+            lock (changesLock)
+            {
+                _db.SaveChanges();
+            }
         }
     }
 }
